@@ -65,58 +65,6 @@
         Login/Register
       </button>
     </main>
-    <!-- <div
-      class="modal fade"
-      id="registerModal"
-      tabindex="-1"
-      aria-labelledby="registerModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-centered m-5">
-        <div class="modal-content">
-          <div class="modal-header mb-4">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Register</h1>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <form>
-              <label for="email" class="col-form-label>">Email address: </label>
-              <input
-                name="email"
-                type="email"
-                class="form-control mb-4"
-                id="email"
-              />
-              <label for="password" class="col-form-label">Password: </label>
-              <input
-                name="password"
-                type="password"
-                class="form-control mb-4"
-                id="password"
-              />
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary col-12 mb-4"
-              data-bs-target="loginModal"
-              data-bs-toggle="modal"
-            >
-              Login
-            </button>
-            <button type="button" class="btn btn-primary col-12 mb-4">
-              Register
-            </button>
-          </div>
-        </div>
-      </div>
-    </div> -->
     <div
       class="modal fade"
       id="loginModal"
@@ -124,7 +72,7 @@
       aria-labelledby="exampleModalToggleLabel"
       tabindex="-1"
     >
-      <div class="modal-dialog modal-dialog-centered m-5">
+      <form class="modal-dialog modal-dialog-centered m-5" id="loginForm">
         <div class="modal-content">
           <div class="modal-header mb-4">
             <h1 class="modal-title fs-5" id="exampleModalToggleLabel">
@@ -138,7 +86,7 @@
             ></button>
           </div>
           <div class="modal-body">
-            <form>
+            <div>
               <label for="email" class="col-form-label>">Email address: </label>
               <input
                 name="email"
@@ -153,10 +101,10 @@
                 class="form-control mb-4"
                 id="password"
               />
-            </form>
+            </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary w-100 mb-4">
+            <button type="submit" class="btn btn-primary w-100 mb-4">
               Login
             </button>
             <button
@@ -169,7 +117,7 @@
             </button>
           </div>
         </div>
-      </div>
+      </form>
     </div>
     <div
       class="modal fade"
@@ -178,7 +126,7 @@
       aria-labelledby="exampleModalToggleLabel2"
       tabindex="-1"
     >
-      <div class="modal-dialog modal-dialog-centered m-5">
+      <form class="modal-dialog modal-dialog-centered m-5" id="registerForm">
         <div class="modal-content">
           <div class="modal-header">
             <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">
@@ -192,25 +140,25 @@
             ></button>
           </div>
           <div class="modal-body">
-            <form>
+            <div>
               <label for="email" class="col-form-label>">Email address: </label>
               <input
                 name="email"
                 type="email"
                 class="form-control mb-4"
-                id="email"
+                id="emailRegister"
               />
               <label for="password" class="col-form-label">Password: </label>
               <input
                 name="password"
                 type="password"
                 class="form-control mb-4"
-                id="password"
+                id="passwordRegister"
               />
-            </form>
+            </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary w-100 mb-4">
+            <button type="submit" class="btn btn-primary w-100 mb-4">
               Register
             </button>
             <button
@@ -223,7 +171,7 @@
             </button>
           </div>
         </div>
-      </div>
+      </form>
     </div>
     <template id="template-card">
       <div class="card">

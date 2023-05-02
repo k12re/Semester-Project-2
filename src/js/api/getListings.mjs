@@ -14,7 +14,7 @@ export async function getListings() {
   );
   console.log(response);
   const json = await response.json();
-  console.log(json);
+  // console.log(json);
   // results = json.data;
 
   const listingsContainer = document.querySelector(".listings-container");
