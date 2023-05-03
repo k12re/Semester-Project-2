@@ -20,9 +20,17 @@ export async function loginUser(user) {
     console.log(postData);
 
     const response = await fetch(loginUrl, postData);
-    const json = response.json();
+    const json = await response.json();
     console.log(json);
-  } catch {}
+
+    if (response.ok) {
+      const accessToken = json.accessToken;
+      localStorage.setItem("accessToken", accessToken);
+    }
+  } catch (error) {
+    console.log(error);
+    throw new Error(`${error.message}`);
+  }
 }
 
 // loginUser();

@@ -18,9 +18,11 @@ export async function registerUser(profile) {
     };
 
     const response = await fetch(registerUrl, postData);
-    const json = response.json();
-    console.log(json);
-  } catch {}
+    const json = await response.json();
+  } catch (error) {
+    console.log(error);
+    throw new Error(`${error.message}`);
+  }
 }
 
 // registerUser();
