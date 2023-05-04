@@ -1,5 +1,6 @@
 import { apiUrl, auctionEndpoint, authEndpoint } from "./api.mjs";
 import { loginFormListener } from "../listeners/login.mjs";
+import { save } from "../storage/storage.mjs";
 
 const action = "/login";
 const method = "POST";
@@ -25,7 +26,11 @@ export async function loginUser(user) {
 
     if (response.ok) {
       const accessToken = json.accessToken;
-      localStorage.setItem("accessToken", accessToken);
+      save("accessToken", accessToken);
+      delete json.accessToken;
+      save("profile", json);
+
+      window.location.href = "/";
     }
   } catch (error) {
     console.log(error);
