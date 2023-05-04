@@ -1,6 +1,7 @@
 import "../scss/styles.scss";
 import * as bootstrap from "bootstrap";
 
+import { authFetch } from "./api/authFetch.mjs";
 import { getListings } from "./api/getListings.mjs";
 import { registerFormListener } from "./listeners/register.mjs";
 import { registerUser } from "./api/register.mjs";
@@ -10,7 +11,6 @@ import { remove } from "./storage/storage.mjs";
 
 const stickyBtn = document.querySelector(".stickyBtn");
 const logoutBtn = document.querySelector("#logoutBtn");
-console.log(logoutBtn);
 
 if (localStorage["accessToken"]) {
   stickyBtn.style.display = "none";
