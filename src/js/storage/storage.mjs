@@ -12,5 +12,5 @@ export function load(key) {
 }
 
 export function remove(key) {
-  localStorage.remove(key);
+  localStorage.clear(key);
 }
