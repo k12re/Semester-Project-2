@@ -9,7 +9,7 @@ export async function getListings() {
   };
 
   const response = await fetch(
-    `${auctionListingsUrl}/?_seller=true&_bids=true`,
+    `${auctionListingsUrl}/?_seller=true&_bids=true&_active=true`,
     getData
   );
   const json = await response.json();

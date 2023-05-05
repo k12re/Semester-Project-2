@@ -35,9 +35,16 @@
     </div>
     <main>
       <div class="container py-4 px-3 mx-auto">
-        <span class="row justify-space-between">
+        <span class="d-flex justify-content-around mb-4">
           <h1 class="col-5">Listings</h1>
-          <i class="bi bi-plus-circle col-2 h1"></i>
+          <a
+            class="nav-link"
+            id="createListing"
+            href="#"
+            data-bs-toggle="modal"
+            data-bs-target="#createListingModal"
+            ><i class="bi bi-plus-circle col-2 h1"></i
+          ></a>
           <div class="btn-group col-5">
             <button
               type="button"
@@ -182,14 +189,86 @@
         </div>
       </form>
     </div>
-    <template id="template-card">
+    <div
+      class="modal fade"
+      id="createListingModal"
+      aria-hidden="true"
+      aria-labelledby="exampleModalToggleLabel2"
+      tabindex="-1"
+    >
+      <form
+        class="modal-dialog modal-dialog-centered m-5"
+        id="createListingForm"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">
+              Create Listing
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div>
+              <label for="title" class="col-form-label>">Title: </label>
+              <input
+                name="title"
+                type="text"
+                class="form-control mb-2"
+                id="titleCreate"
+              />
+              <label for="description" class="col-form-label>"
+                >Description:
+              </label>
+              <input
+                name="description"
+                type="text"
+                class="form-control mb-2"
+                id="descriptionCreate"
+              />
+              <label for="tags" class="col-form-label">Tags: </label>
+              <input
+                name="tags"
+                type="text"
+                class="form-control mb-2"
+                id="tagsCreate"
+              />
+              <label for="media" class="col-form-label">Media: </label>
+              <input
+                name="media"
+                type="text"
+                class="form-control mb-2"
+                id="mediaCreate"
+              />
+              <label for="endsAt" class="col-form-label">End date: </label>
+              <input
+                name="endsAt"
+                type="date"
+                class="form-control mb-2"
+                id="endDateCreate"
+              />
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary w-100 mb-4">
+              Create Listing
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <!-- <template id="template-card">
       <div class="card">
         <div class="row">
           <div class="col">
-            <!--  -->
+            
           </div>
         </div>
       </div>
-    </template>
+    </template> -->
   </body>
 </html>
