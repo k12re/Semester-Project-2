@@ -20,9 +20,7 @@ export async function authFetch() {
       `${apiUrl}${auctionEndpoint}${listingsEndpoint}`,
       getData
     );
-    console.log(response);
     const json = await response.json();
-    console.log(json);
   } catch (error) {
     console.log(error);
     throw new Error(`${error.message}`);

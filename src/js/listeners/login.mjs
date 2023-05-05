@@ -2,7 +2,6 @@ import { loginUser } from "../api/login.mjs";
 
 export function loginFormListener() {
   const loginForm = document.querySelector("#loginForm");
-  console.log(loginForm);
 
   if (loginForm) {
     loginForm.addEventListener("submit", (event) => {
@@ -10,7 +9,6 @@ export function loginFormListener() {
       const loginForm = event.target;
       const formData = new FormData(loginForm);
       const user = Object.fromEntries(formData.entries());
-      console.log(user);
 
       loginUser(user);
     });

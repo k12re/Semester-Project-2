@@ -12,10 +12,7 @@ export async function getListings() {
     `${auctionListingsUrl}/?_seller=true&_bids=true`,
     getData
   );
-  console.log(response);
   const json = await response.json();
-  // console.log(json);
-  // results = json.data;
 
   const listingsContainer = document.querySelector(".listings-container");
   listingsContainer.innerHTML = "";
