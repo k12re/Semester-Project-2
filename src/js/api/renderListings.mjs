@@ -1,7 +1,7 @@
 import { getListings } from "./getListings.mjs";
 
 const listingsContainer = document.querySelector(".listings-container");
-const path = location.pathname;
+// const path = location.pathname;
 
 export function listingTemplate(listingData) {
   const { title, description, tags, media, seller, created, endsAt } =
@@ -28,11 +28,14 @@ export function listingTemplate(listingData) {
   if (seller.avatar) {
     const avatarImg = clone.querySelector(".avatar-img");
     avatarImg.src = seller.avatar;
+  } else {
+    const avatarImg = clone.querySelector(".avatar-img");
+    avatarImg.src = "../assets/person-circle.svg";
   }
 
   const userName = clone.querySelector(".username");
   userName.innerText = seller.name;
-  userName.href = `/profiles/?name=${seller.name}`;
+  userName.href = `/profile/?name=${seller.name}`;
 
   const endDate = clone.querySelector(".end-date");
   endDate.innerText = `End date: ${endsAt.substring(0, 10)}`;

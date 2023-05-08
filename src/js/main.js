@@ -12,6 +12,8 @@ import { createListing } from "./api/createListing.mjs";
 import { createListingListener } from "./listeners/createListing.mjs";
 import { getProfiles, getProfile } from "./profiles/getProfiles.mjs";
 import { renderListingTemplates } from "./api/renderListings.mjs";
+import { renderProfileTemplates } from "./profiles/renderProfiles.mjs";
+import { profileFetch } from "./profiles/renderProfile.mjs";
 
 const stickyBtn = document.querySelector(".stickyBtn");
 const logoutBtn = document.querySelector("#logoutBtn");

@@ -9,7 +9,7 @@ export async function getProfiles() {
 getProfiles();
 
 export async function getProfile(name) {
-  const profileUrl = `${auctionProfilesUrl}/${name}`;
+  const profileUrl = `${auctionProfilesUrl}/${name}?_listings=true`;
   const response = await authFetch(profileUrl);
   return await response.json();
 }

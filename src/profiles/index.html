@@ -39,6 +39,9 @@
           <h1 class="col-5">Profiles</h1>
           </div>
         </span>
+        <div class="container">
+          <article class="row profiles-container"></article>
+        </div>
       </div>
       <button
         type="button"
@@ -49,5 +52,25 @@
         Login/Register
       </button>
     </main>
+    <template id="profiles-template">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6 col-md-4">
+            <div class="card shadow border border-0 mb-4">
+              <img class="avatar-image-big avatar-img rounded-circle col-3" />
+              <h2 class="seller-text col-8"></h2>
+              <p class="email-text col-8"></p>
+              <p class="wins-text"></p>
+              <!-- <img class="listing-img" /> -->
+              <span
+                ><i class="bi bi-piggy-bank-fill m-2 h2"></i><p
+                  class="credits"
+                ></p
+              ></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </template>
   </body>
 </html>
