@@ -13,6 +13,7 @@ export async function getListings() {
     getData
   );
   const json = await response.json();
+  console.log(json);
 
   const listingsContainer = document.querySelector(".listings-container");
   listingsContainer.innerHTML = "";

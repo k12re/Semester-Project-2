@@ -5,3 +5,4 @@ export const listingsEndpoint = "/listings";
 export const profilesEndpoint = "/profiles";
 
 export const auctionListingsUrl = `${apiUrl}${auctionEndpoint}${listingsEndpoint}`;
+export const auctionProfilesUrl = `${apiUrl}${auctionEndpoint}${profilesEndpoint}`;

@@ -10,6 +10,7 @@ import { loginUser } from "./api/login.mjs";
 import { remove } from "./storage/storage.mjs";
 import { createListing } from "./api/createListing.mjs";
 import { createListingListener } from "./listeners/createListing.mjs";
+import { getProfiles, getProfile } from "./profiles/getProfiles.mjs";
 
 const stickyBtn = document.querySelector(".stickyBtn");
 const logoutBtn = document.querySelector("#logoutBtn");
