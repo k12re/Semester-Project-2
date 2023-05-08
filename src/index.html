@@ -9,10 +9,10 @@
   </head>
   <body class="">
     <nav class="nav text-bg-light fixed-bottom d-flex justify-content-around">
-      <a class="nav-link" id="profileBtn" href="#"
+      <a class="nav-link" id="profileBtn" href="/profiles/"
         ><i class="bi bi-person m-2 h1"></i
       ></a>
-      <a class="nav-link active" id="homeBtn" aria-current="page" href="#"
+      <a class="nav-link active" id="homeBtn" aria-current="page" href="/"
         ><i class="bi bi-house m-2 h1"></i
       ></a>
       <a class="nav-link" id="logoutBtn" href="#"
@@ -63,7 +63,9 @@
             </ul>
           </div>
         </span>
-        <article class="container listings-container"></article>
+        <div class="container">
+          <article class="row listings-container"></article>
+        </div>
       </div>
       <button
         type="button"
@@ -261,14 +263,25 @@
         </div>
       </form>
     </div>
-    <!-- <template id="template-card">
-      <div class="card">
+    <template id="listing-template">
+      <div class="container">
         <div class="row">
-          <div class="col">
-            
+          <div class="col-sm-6 col-md-4">
+            <div class="card mb-4">
+              <h2 class="title-text"></h2>
+              <p class="created-text"></p>
+              <p class="description-text">Description:</p>
+              <img class="listing-img" />
+              <span
+                ><img class="image avatar-img col-1" /><a
+                  class="username btn link-primary text-muted"
+                ></a
+              ></span>
+              <p class="end-date"></p>
+            </div>
           </div>
         </div>
       </div>
-    </template> -->
+    </template>
   </body>
 </html>
