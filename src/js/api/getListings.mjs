@@ -16,4 +16,12 @@ export async function getListings() {
   return await response.json();
 }
 
-getListings();
+// getListings();
+
+export async function getListing(id) {
+  const listingsUrl = `${auctionListingsUrl}/${id}?_seller=true&_bids=true`;
+  const response = await fetch(listingsUrl);
+  return await response.json();
+}
+
+// getListing();

@@ -1,6 +1,8 @@
-import { getListings } from "./getListings.mjs";
+import { authFetch } from "./authFetch.mjs";
+import { getListing } from "./getListings.mjs";
+// import { listingTemplate } from "./renderListings.mjs";
 
-const listingsContainer = document.querySelector(".listings-container");
+const listingContainer = document.querySelector(".listing-container");
 const path = location.pathname;
 
 export function listingTemplate(listingData) {
@@ -41,22 +43,25 @@ export function listingTemplate(listingData) {
   const endDate = clone.querySelector(".end-date");
   endDate.innerText = `End date: ${endsAt.substring(0, 10)}`;
 
-  listingsContainer.append(clone);
+  listingContainer.append(clone);
 
   return clone;
 }
 
-export function renderListingTemplates(listingDataList, parent) {
-  const listingElements = listingDataList.map(listingTemplate);
-  parent.append(...listingElements);
+export async function listingFetch() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const id = urlParams.get("id");
+  const listing = await getListing(id);
+
+  renderListing(listing, listingContainer);
 }
 
-async function listingsTemplates() {
-  const listingTemplate = await getListings();
-  const container = document.querySelector(".listings-container");
-  renderListingTemplates(listingTemplate, container);
+function renderListing(listingData, parent) {
+  if (parent) {
+    return listingTemplate(listingData);
+  }
 }
 
-if (path === "/") {
-  listingsTemplates();
+if (path === "/listing/") {
+  listingFetch();
 }
