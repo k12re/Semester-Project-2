@@ -3,6 +3,7 @@ import { getListing } from "./getListings.mjs";
 // import { listingTemplate } from "./renderListings.mjs";
 
 const listingContainer = document.querySelector(".listing-container");
+const bidListContainer = document.querySelector(".bid-list-container");
 const path = location.pathname;
 
 export function listingTemplate(listingData) {
@@ -48,12 +49,42 @@ export function listingTemplate(listingData) {
   return clone;
 }
 
+export function bidTemplate(bidData) {
+  const { amount, bidderName, created } = bidData;
+
+  const template = document.querySelector("#listing-bid-template");
+  const clone = template.content.cloneNode(true);
+
+  // const mediaItem = clone.querySelector(".list-img");
+  // mediaItem.src = media;
+
+  const bidder = clone.querySelector(".bidder-name");
+  bidder.innerText = `Bidder: ${bidderName}`;
+
+  const bidDate = clone.querySelector(".bid-date");
+  bidDate.innerText = `Bid date: ${created.substring(0, 10)}`;
+
+  const bidAmount = clone.querySelector(".bid-amount");
+  bidAmount.innerText = `Bid amount: ${amount}`;
+
+  bidListContainer.append(clone);
+
+  return clone;
+}
+
 export async function listingFetch() {
   const urlParams = new URLSearchParams(window.location.search);
   const id = urlParams.get("id");
   const listing = await getListing(id);
+  const bidsList = listing.bids;
 
+  console.log(listing);
   renderListing(listing, listingContainer);
+  renderBids(bidsList, bidListContainer);
+}
+
+if (path === "/listing/") {
+  listingFetch();
 }
 
 function renderListing(listingData, parent) {
@@ -62,6 +93,7 @@ function renderListing(listingData, parent) {
   }
 }
 
-if (path === "/listing/") {
-  listingFetch();
+function renderBids(bidData, parent) {
+  const bidElements = bidData.slice(0).reverse().map(bidTemplate);
+  parent.append(...bidElements);
 }
