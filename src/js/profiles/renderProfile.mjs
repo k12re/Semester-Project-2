@@ -61,6 +61,8 @@ export async function profileFetch() {
   const profile = await getProfile(name);
   const listItems = profile.listings;
 
+  console.log(profile);
+
   renderProfile(profile, profileContainer);
   renderList(listItems, listContainer);
 }

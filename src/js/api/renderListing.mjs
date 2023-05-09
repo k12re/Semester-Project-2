@@ -79,6 +79,7 @@ export async function listingFetch() {
   const bidsList = listing.bids;
 
   console.log(listing);
+
   renderListing(listing, listingContainer);
   renderBids(bidsList, bidListContainer);
 }
