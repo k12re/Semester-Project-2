@@ -19,16 +19,16 @@ export function profileTemplate(profileData) {
   }
 
   const userName = clone.querySelector(".seller-text");
-  userName.innerText = name;
+  userName.innerText = `Name: ${name}`;
 
   const contactEmail = clone.querySelector(".email-text");
-  contactEmail.innerText = email;
+  contactEmail.innerText = `Email: ${email}`;
 
   const winsCount = clone.querySelector(".wins-text");
-  winsCount.innerText = wins;
+  winsCount.innerText = `Wins: ${wins.length}`;
 
   const creditsCount = clone.querySelector(".credits");
-  creditsCount.innerText = credits;
+  creditsCount.innerText = `Credits: ${credits}`;
 
   profileContainer.append(clone);
 
