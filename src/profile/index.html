@@ -42,6 +42,10 @@
         <div class="container">
           <article class="row profile-container"></article>
         </div>
+        <h2 class="m-3">Listings:</h2>
+        <div class="container">
+          <article class="row list-container"></article>
+        </div>
       </div>
     </div>
       <button
@@ -68,6 +72,21 @@
                   class="credits m-3"
                 ></p
               ></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </template>
+    <template id="listing-list-template">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6 col-md-4">
+            <div class="card list-card shadow border border-0 m-2 mb-5 d-flex">
+               <img class="list-img col-3 h-100 rounded-start float-start">
+               <div class="col-8 position-absolute top-0 end-0 mt-3">
+               <h3 class="list-item text-end me-3"></h3>
+               <p class="end-date text-end me-3"></p>
+              </div>
             </div>
           </div>
         </div>
