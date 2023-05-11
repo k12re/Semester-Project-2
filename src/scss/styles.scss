@@ -34,3 +34,8 @@
   object-fit: cover;
   object-position: center;
 }
+
+#bidding-form-container,
+#edit-profile-form-container {
+  display: none;
+}

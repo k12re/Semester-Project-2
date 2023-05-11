@@ -35,13 +35,26 @@
     </div>
     <main>
       <div class="container py-4 px-3 mx-auto">
-        <span class="row justify-space-between mb-4 m-3">
+        <span class="row justify-space-between mb-4 m-2">
           <h1 class="col-5">Profile</h1>
-          
         </span>
         <div class="container">
-          <article class="row profile-container"></article>
+          <article class="row profile-container">
+            <div class="container" id="edit-profile-form-container">
+              <form class="border-0">
+                <div class="row mb-3 mx-auto">
+                  <div class="col-12">
+                    <p class="edit-profile mb-2">Edit avatar:</p>
+                    <input type="text" class="form-control" id="editAvatar" aria-describedby="avatarHelp" placeholder="Type URL...">
+                    <label for="editAvatar" class="form-label"></label>
+                    <button type="submit" class="btn btn-primary me-3 mb-3 col-12">Submit avatar</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </article>
         </div>
+
         <h2 class="m-3">Listings:</h2>
         <div class="container">
           <article class="row list-container"></article>
@@ -61,12 +74,13 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-6 col-md-4">
-            <div class="card shadow border border-0 m-2 mb-4 pb-3 pt-3">
+            <div class="card shadow border border-0 mb-4 pb-3 pt-3">
               <img class="avatar-image-big avatar-img rounded-circle col-3 m-3" />
+              <div class="container" id="edit-profile-form-container">
+              </div>
               <div class="col-8 "><h2 class="seller-text col-8 m-3"></h2>
               <p class="email-text col-8 m-3"></p>
               <p class="wins-text m-3"></p>
-              <!-- <img class="listing-img" /> -->
               <span class="text-end"
                 ><i class="bi bi-piggy-bank-fill ms-3 h2"></i><span
                   class="credits m-3 h3"
@@ -82,7 +96,7 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-6 col-md-4">
-            <div class="card list-card shadow border border-0 m-2 mb-5 d-flex">
+            <div class="card list-card shadow border border-0 mb-5 d-flex">
                <img class="list-img col-3 h-100 rounded-start float-start">
                <div class="col-8 position-absolute top-0 end-0 mt-3 ms-3">
                <h3 class="list-item text-start me-3"></h3>

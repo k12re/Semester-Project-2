@@ -1,9 +1,11 @@
 import { authFetch } from "./authFetch.mjs";
 import { getListing } from "./getListings.mjs";
+import { load } from "../storage/storage.mjs";
 // import { listingTemplate } from "./renderListings.mjs";
 
 const listingContainer = document.querySelector(".listing-container");
 const bidListContainer = document.querySelector(".bid-list-container");
+const bidFormContainer = document.querySelector("#bidding-form-container");
 const path = location.pathname;
 
 export function listingTemplate(listingData) {
@@ -78,7 +80,11 @@ export async function listingFetch() {
   const listing = await getListing(id);
   const bidsList = listing.bids;
 
-  console.log(listing);
+  const profileName = load("profile");
+  const sellerName = listing.seller.name;
+  if (profileName.name !== sellerName) {
+    bidFormContainer.style.display = "block";
+  }
 
   renderListing(listing, listingContainer);
   renderBids(bidsList, bidListContainer);

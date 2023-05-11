@@ -35,17 +35,17 @@
     </div>
     <main>
       <div class="container py-4 px-3 mx-auto">
-        <span class="d-flex justify-space-between mb-4 m-3">
+        <span class="d-flex justify-space-between mb-4 m-2">
           <h1 class="col-5">Listing</h1>
         </span>
         <div class="container">
           <article class="row listing-container"></article>
-        </div>
-        <h2 class="m-3 mb-4">Place a bid: </h2>
-        <div class="container">
+        </div> 
+        <div class="container" id="bidding-form-container">
           <div class="row">
             <div class="col">
-              <form class="card shadow border border-0 m-2 mb-5">
+              <h2 class="m-3 mb-4">Place a bid: </h2>
+              <form class="card shadow border border-0 mb-5">
                 <div class="row mb-3">
                   <div class="col-11">
                     <label for="bidInput" class="form-label"></label>
@@ -77,7 +77,7 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-6 col-md-4">
-            <div class="card shadow border border-0 m-2 mb-5">
+            <div class="card shadow border border-0 mb-5">
               <h2 class="title-text m-3"></h2>
               <p class="created-text m-3"></p>
               <p class="description-text m-3"></p>
@@ -99,7 +99,6 @@
         <div class="row">
           <div class="col-sm-6 col-md-4">
             <div class="card list-card shadow border border-0 mt-2 mb-5 d-flex">
-               <!-- <img class="list-img col-3 h-100 rounded-start float-start"> -->
                <div class="col-12">
                <h3 class="bidder-name text-start ms-3 mt-3"></h3>
                <span>
