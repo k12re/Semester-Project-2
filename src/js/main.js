@@ -15,6 +15,8 @@ import { renderListingTemplates } from "./api/renderListings.mjs";
 import { renderProfileTemplates } from "./profiles/renderProfiles.mjs";
 import { profileFetch } from "./profiles/renderProfile.mjs";
 import { listingFetch } from "./api/renderListing.mjs";
+import { bidOnListingListener } from "./listeners/bid.mjs";
+import { bidOnListing } from "./api/bidOnListing.mjs";
 
 const stickyBtn = document.querySelector(".stickyBtn");
 const logoutBtn = document.querySelector("#logoutBtn");
@@ -35,3 +37,4 @@ function logoutListener() {
 }
 
 logoutListener();
+bidOnListingListener();

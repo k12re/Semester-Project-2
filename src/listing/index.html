@@ -45,11 +45,11 @@
           <div class="row">
             <div class="col">
               <h2 class="m-3 mb-4">Place a bid: </h2>
-              <form class="card shadow border border-0 mb-5">
+              <form class="card shadow border border-0 mb-5" id="bidding-form">
                 <div class="row mb-3">
                   <div class="col-11">
-                    <label for="bidInput" class="form-label"></label>
-                    <input type="number" class="form-control m-3" id="bidInput" aria-describedby="bidHelp" placeholder="Type amount...">
+                    <label for="amount" class="form-label"></label>
+                    <input name="amount" type="number" class="form-control m-3" id="amount" aria-describedby="bidHelp" placeholder="Type amount...">
                     <div id="bidHelp" class="form-text ms-3">Must be higher than current bid</div>
                     <button type="submit" class="btn btn-primary ms-3 me-3 mb-3 col-12">Bid on item</button>
                   </div>
