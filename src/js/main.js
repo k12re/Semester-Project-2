@@ -11,10 +11,16 @@ import { remove } from "./storage/storage.mjs";
 import { createListing } from "./api/createListing.mjs";
 import { createListingListener } from "./listeners/createListing.mjs";
 import { getProfiles, getProfile } from "./profiles/getProfiles.mjs";
+import { renderListingTemplates } from "./api/renderListings.mjs";
+import { renderProfileTemplates } from "./profiles/renderProfiles.mjs";
+import { profileFetch } from "./profiles/renderProfile.mjs";
+import { listingFetch } from "./api/renderListing.mjs";
 
 const stickyBtn = document.querySelector(".stickyBtn");
 const logoutBtn = document.querySelector("#logoutBtn");
 const createListingBtn = document.querySelector("#createListing");
+const profileBtn = document.querySelector("#profileBtn");
+const card = document.querySelector(".card");
 
 if (localStorage["accessToken"]) {
   stickyBtn.style.display = "none";

@@ -3,17 +3,15 @@ import { authFetch } from "../api/authFetch.mjs";
 
 export async function getProfiles() {
   const response = await authFetch(auctionProfilesUrl);
-  const json = await response.json();
-  console.log(json);
+  return await response.json();
 }
 
 getProfiles();
 
 export async function getProfile(name) {
-  const profileUrl = `${auctionProfilesUrl}/${name}`;
+  const profileUrl = `${auctionProfilesUrl}/${name}?_listings=true`;
   const response = await authFetch(profileUrl);
-  const json = await response.json();
-  console.log(json);
+  return await response.json();
 }
 
 getProfile();
