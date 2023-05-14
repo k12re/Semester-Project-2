@@ -68,15 +68,9 @@ export async function profileFetch() {
   const profileName = load("profile");
   const sellerName = profile;
 
-  console.log(profileName.name);
-  console.log(sellerName.name);
-
   if (profileName.name === sellerName.name) {
     editProfileFormContainer.style.display = "block";
-    console.log(editProfileFormContainer);
   }
-
-  console.log(profile);
 
   renderProfile(profile, profileContainer);
   renderList(listItems, listContainer);
