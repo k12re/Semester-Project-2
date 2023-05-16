@@ -9,7 +9,6 @@ export async function getSearchResults(searchQuery) {
     const response = await fetch(searchListingsUrl);
 
     const json = await response.json();
-    console.log(json);
 
     const searchedPosts = json.filter((listing) => {
       return (

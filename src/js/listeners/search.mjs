@@ -7,10 +7,6 @@ export function searchListener() {
     event.preventDefault();
 
     const searchQuery = document.querySelector("#search").value;
-
-    console.log(searchQuery);
     getSearchResults(searchQuery);
   });
 }
-
-searchListener();

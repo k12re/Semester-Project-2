@@ -18,7 +18,7 @@ import { listingFetch } from "./api/renderListing.mjs";
 import { bidOnListingListener } from "./listeners/bid.mjs";
 import { bidOnListing } from "./api/bidOnListing.mjs";
 import { editAvatarListener } from "./listeners/editAvatar.mjs";
-// import { searchListener } from "./listeners/search.mjs";
+import { searchListener } from "./listeners/search.mjs";
 
 const stickyBtn = document.querySelector(".stickyBtn");
 const logoutBtn = document.querySelector("#logoutBtn");
@@ -41,4 +41,4 @@ function logoutListener() {
 logoutListener();
 bidOnListingListener();
 editAvatarListener();
-// searchListener();
+searchListener();
