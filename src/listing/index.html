@@ -9,28 +9,19 @@
   </head>
   <body class="">
     <nav class="nav text-bg-light d-flex">
-      <a class="nav-link" id="profileBtn" href="/profiles/"
+      <a class="nav-link" id="profileBtn" href=""
         ><i class="bi bi-person m-2 h3"></i
       ></a>
       <a class="nav-link active" id="homeBtn" aria-current="page" href="/"
         ><i class="bi bi-house m-2 h3"></i
       ></a>
-      <a class="nav-link" id="logoutBtn" href="#"
+      <a class="nav-link" id="logoutBtn" href="/"
         ><i class="bi bi-box-arrow-right m-2 h3"></i
       ></a>
     </nav>
     <div class="navbar bg-light">
       <div class="container-fluid">
         <a class="navbar-brand">Auction House</a>
-        <!-- <form class="d-flex" role="search">
-          <input
-            class="form-control me-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-          />
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form> -->
       </div>
     </div>
     <main>
@@ -76,7 +67,7 @@
     <template id="listing-template">
       <div class="container">
         <div class="row">
-          <div class="col-sm-6 col-md-4">
+          <div class="col-12">
             <div class="card shadow border border-0 mb-5">
               <h2 class="title-text m-3"></h2>
               <p class="created-text m-3"></p>
@@ -95,7 +86,7 @@
       </div>
     </template>
     <template id="listing-bid-template">
-          <div class="col-sm-6 col-md-4">
+          <div class="col-md-6">
             <div class="card list-card shadow border border-0 mt-2 mb-5 d-flex">
                <div class="col-12">
                <h3 class="bidder-name text-start ms-3 mt-3"></h3>

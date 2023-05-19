@@ -19,12 +19,18 @@ import { bidOnListingListener } from "./listeners/bid.mjs";
 import { bidOnListing } from "./api/bidOnListing.mjs";
 import { editAvatarListener } from "./listeners/editAvatar.mjs";
 import { searchListener } from "./listeners/search.mjs";
+import { load } from "./storage/storage.mjs";
 
 const stickyBtn = document.querySelector(".stickyBtn");
 const logoutBtn = document.querySelector("#logoutBtn");
 const createListingBtn = document.querySelector("#createListing");
 const profileBtn = document.querySelector("#profileBtn");
 const card = document.querySelector(".card");
+const loggedInUseruser = load("profile");
+
+if (localStorage["profile"]) {
+  profileBtn.href = `/profile/?name=${loggedInUseruser.name}`;
+}
 
 if (localStorage["accessToken"]) {
   stickyBtn.style.display = "none";
@@ -42,3 +48,6 @@ logoutListener();
 bidOnListingListener();
 editAvatarListener();
 searchListener();
+
+console.log(loggedInUseruser);
+console.log(profileBtn);

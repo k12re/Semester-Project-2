@@ -48,21 +48,3 @@ async function profileTemplates() {
 if (path === "/profiles/") {
   profileTemplates();
 }
-
-// export async function profileFetch() {
-//   const urlParams = new URLSearchParams(window.location.search);
-//   const name = urlParams.get("name");
-//   const profile = await getProfile(name);
-
-//   renderProfile(profile, profileContainer);
-// }
-
-// function renderProfile(profileData, parent) {
-//   if (parent) {
-//     return profilesTemplate(profileData);
-//   }
-// }
-
-// if (path === "/profile/") {
-//   profileFetch();
-// }
