@@ -8,15 +8,15 @@
     <title>Auction House | Listing</title>
   </head>
   <body class="">
-    <nav class="nav text-bg-light fixed-bottom d-flex justify-content-around">
+    <nav class="nav text-bg-light d-flex">
       <a class="nav-link" id="profileBtn" href="/profiles/"
-        ><i class="bi bi-person m-2 h1"></i
+        ><i class="bi bi-person m-2 h3"></i
       ></a>
       <a class="nav-link active" id="homeBtn" aria-current="page" href="/"
-        ><i class="bi bi-house m-2 h1"></i
+        ><i class="bi bi-house m-2 h3"></i
       ></a>
       <a class="nav-link" id="logoutBtn" href="#"
-        ><i class="bi bi-box-arrow-right m-2 h1"></i
+        ><i class="bi bi-box-arrow-right m-2 h3"></i
       ></a>
     </nav>
     <div class="navbar bg-light">
@@ -49,7 +49,7 @@
                 <div class="row mb-3">
                   <div class="col-11">
                     <label for="amount" class="form-label"></label>
-                    <input name="amount" type="number" class="form-control m-3" id="amount" aria-describedby="bidHelp" placeholder="Type amount...">
+                    <input name="amount" type="number" class="form-control m-3" id="amount" aria-describedby="bidHelp" placeholder="Type amount..." required>
                     <div id="bidHelp" class="form-text ms-3">Must be higher than current bid</div>
                     <button type="submit" class="btn btn-primary ms-3 me-3 mb-3 col-12">Bid on item</button>
                   </div>
@@ -95,8 +95,6 @@
       </div>
     </template>
     <template id="listing-bid-template">
-      <div class="container">
-        <div class="row">
           <div class="col-sm-6 col-md-4">
             <div class="card list-card shadow border border-0 mt-2 mb-5 d-flex">
                <div class="col-12">
@@ -108,8 +106,6 @@
               </div>
             </div>
           </div>
-        </div>
-      </div>
     </template>
   </body>
 </html>

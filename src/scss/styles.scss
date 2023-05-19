@@ -19,8 +19,6 @@
 }
 
 .listing-img {
-  // height: 100%;
-  // width: 100%;
   object-fit: cover;
   object-position: center;
 }
@@ -38,4 +36,22 @@
 #bidding-form-container,
 #edit-profile-form-container {
   display: none;
+}
+
+nav {
+  position: fixed;
+  bottom: 0px;
+  display: flex;
+  justify-content: space-around;
+  z-index: 1000;
+  width: 100%;
+}
+
+@media screen and (min-width: 780px) {
+  nav {
+    position: absolute;
+    top: 5px;
+    bottom: 100%;
+    justify-content: center;
+  }
 }

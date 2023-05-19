@@ -9,7 +9,7 @@ export async function getListings() {
   };
 
   const response = await fetch(
-    `${auctionListingsUrl}/?_seller=true&_bids=true&_active=true`,
+    `${auctionListingsUrl}/?_seller=true&_bids=true&_active=true&sort=created`,
     getData
   );
 
