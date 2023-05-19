@@ -48,6 +48,3 @@ logoutListener();
 bidOnListingListener();
 editAvatarListener();
 searchListener();
-
-console.log(loggedInUseruser);
-console.log(profileBtn);

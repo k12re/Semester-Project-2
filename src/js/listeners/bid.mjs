@@ -8,7 +8,6 @@ export async function bidOnListingListener() {
 
   const urlParams = new URLSearchParams(window.location.search);
   const listingId = urlParams.get("id");
-  console.log(listingId);
 
   if (bidOnListingForm) {
     const bid = await getListing(listingId);
