@@ -4,62 +4,101 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script type="module" src="./js/main.js" defer></script>
+    <script type="module" src="../js/main.js" defer></script>
     <title>Auction House | Listing</title>
   </head>
-  <body>
-    <nav class="nav fixed-bottom d-flex justify-content-around">
-      <a class="nav-link" href="#"><i class="bi bi-person m-2 h1"></i></a>
-      <a class="nav-link active" aria-current="page" href="#"
-        ><i class="bi bi-house m-2 h1"></i
+  <body class="">
+    <nav class="nav text-bg-light d-flex">
+      <a class="nav-link" id="profileBtn" href=""
+        ><i class="bi bi-person m-2 h3"></i
       ></a>
-      <a class="nav-link" href="#"
-        ><i class="bi bi-box-arrow-right m-2 h1"></i
+      <a class="nav-link active" id="homeBtn" aria-current="page" href="/"
+        ><i class="bi bi-house m-2 h3"></i
+      ></a>
+      <a class="nav-link" id="logoutBtn" href="/"
+        ><i class="bi bi-box-arrow-right m-2 h3"></i
       ></a>
     </nav>
     <div class="navbar bg-light">
       <div class="container-fluid">
         <a class="navbar-brand">Auction House</a>
-        <form class="d-flex" role="search">
-          <input
-            class="form-control me-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-          />
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
       </div>
     </div>
     <main>
       <div class="container py-4 px-3 mx-auto">
-        <span class="row justify-space-between">
+        <span class="d-flex justify-space-between mb-4 m-2">
           <h1 class="col-5">Listing</h1>
-          <i class="bi bi-plus-circle col-2 h1"></i>
-          <div class="btn-group col-5">
-            <button
-              type="button"
-              class="btn btn-light dropdown-toggle"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              Sort
-            </button>
-            <ul class="dropdown-menu dropdown-menu-end">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-              <li><hr class="dropdown-divider" /></li>
-              <li><a class="dropdown-item" href="#">Separated link</a></li>
-            </ul>
-          </div>
         </span>
+        <div class="container">
+          <article class="row listing-container"></article>
+        </div> 
+        <div class="container" id="bidding-form-container">
+          <div class="row">
+            <div class="col">
+              <h2 class="m-3 mb-4">Place a bid: </h2>
+              <form class="card shadow border border-0 mb-5" id="bidding-form">
+                <div class="row mb-3">
+                  <div class="col-11">
+                    <label for="amount" class="form-label"></label>
+                    <input name="amount" type="number" class="form-control m-3" id="amount" aria-describedby="bidHelp" placeholder="Type amount..." required>
+                    <div id="bidHelp" class="form-text ms-3">Must be higher than current bid</div>
+                    <button type="submit" class="btn btn-primary ms-3 me-3 mb-3 col-12">Bid on item</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <h2 class="m-3 mb-4">Bids: </h2>
+        <div class="container">
+          <article class="row bid-list-container"></article>
+        </div>
       </div>
+    </div>
       <button
-        class="btn btn-primary position-absolute bottom-0 end-0 me-4 mb-4"
+        type="button"
+        data-bs-toggle="modal"
+        data-bs-target="#loginModal"
+        class="stickyBtn btn btn-primary position-fixed sticky-bottom bottom-0 end-0 me-4 mb-5 row-gap-3"
       >
-        Register
+        Login/Register
       </button>
     </main>
+    <template id="listing-template">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="card shadow border border-0 mb-5">
+              <h2 class="title-text m-3"></h2>
+              <p class="created-text m-3"></p>
+              <p class="description-text m-3"></p>
+              <img class="listing-img" />
+              <span class="thumbnail-img-container">
+              </span>
+              <span
+                ><img
+                  class="image rounded-circle avatar-img avatar-img-small col-1 mt-2 ms-3" /><a
+                  class="username btn link-primary text-muted mt-2 ms-2"
+                ></a
+              ></span>
+              <p class="end-date m-3"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </template>
+    <template id="listing-bid-template">
+          <div class="col-md-6">
+            <div class="card list-card shadow border border-0 mt-2 mb-5 d-flex">
+               <div class="col-12">
+               <h3 class="bidder-name text-start ms-3 mt-3"></h3>
+               <span>
+               <p class="bid-date text-start ms-3"></p>
+               <p class="bid-amount text-end me-3 mb-3"></p>
+              </span>
+              </div>
+            </div>
+          </div>
+    </template>
   </body>
 </html>

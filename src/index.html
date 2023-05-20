@@ -8,20 +8,24 @@
     <title>Auction House | Listings</title>
   </head>
   <body class="">
-    <nav class="nav fixed-bottom d-flex justify-content-around">
-      <a class="nav-link" href="#"><i class="bi bi-person m-2 h1"></i></a>
-      <a class="nav-link active" aria-current="page" href="#"
-        ><i class="bi bi-house m-2 h1"></i
+    <nav class="nav text-bg-light d-flex">
+      <a class="nav-link" id="profileBtn" href=""
+        ><i class="bi bi-person m-2 h3"></i
       ></a>
-      <a class="nav-link" href="#"
-        ><i class="bi bi-box-arrow-right m-2 h1"></i
+      <a class="nav-link active" id="homeBtn" aria-current="page" href="/"
+        ><i class="bi bi-house m-2 h3"></i
+      ></a>
+      <a class="nav-link" id="logoutBtn" href="#"
+        ><i class="bi bi-box-arrow-right m-2 h3"></i
       ></a>
     </nav>
     <div class="navbar bg-light">
       <div class="container-fluid">
         <a class="navbar-brand">Auction House</a>
-        <form class="d-flex" role="search">
+        <form class="d-flex" role="search" id="search-form">
           <input
+            name="search"
+            id="search"
             class="form-control me-2"
             type="search"
             placeholder="Search"
@@ -33,33 +37,240 @@
     </div>
     <main>
       <div class="container py-4 px-3 mx-auto">
-        <span class="row justify-space-between">
+        <span class="d-flex justify-content-between mb-4 m-3">
           <h1 class="col-5">Listings</h1>
-          <i class="bi bi-plus-circle col-2 h1"></i>
-          <div class="btn-group col-5">
-            <button
-              type="button"
-              class="btn btn-light dropdown-toggle"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              Sort
-            </button>
-            <ul class="dropdown-menu dropdown-menu-end">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-              <li><hr class="dropdown-divider" /></li>
-              <li><a class="dropdown-item" href="#">Separated link</a></li>
-            </ul>
-          </div>
+          <a
+            class="nav-link"
+            id="createListing"
+            href="#"
+            data-bs-toggle="modal"
+            data-bs-target="#createListingModal"
+            ><i class="bi bi-plus-circle col-2 h1"></i
+          ></a>
         </span>
+        <div class="container">
+          <article class="row listings-container"></article>
+        </div>
+        <div></div>
       </div>
       <button
-        class="btn btn-primary position-absolute bottom-0 end-0 me-4 mb-5"
+        type="button"
+        data-bs-toggle="modal"
+        data-bs-target="#loginModal"
+        class="stickyBtn btn btn-primary position-fixed sticky-bottom bottom-0 end-0 me-4 mb-5 row-gap-3"
       >
-        Register
+        Login/Register
       </button>
     </main>
+    <div
+      class="modal fade"
+      id="loginModal"
+      aria-hidden="true"
+      aria-labelledby="exampleModalToggleLabel"
+      tabindex="-1"
+    >
+      <form class="modal-dialog modal-dialog-centered" id="loginForm">
+        <div class="modal-content">
+          <div class="modal-header mb-4">
+            <h1 class="modal-title fs-5" id="exampleModalToggleLabel">
+              Login User
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div>
+              <label for="email" class="col-form-label>">Email address: </label>
+              <input
+                name="email"
+                type="email"
+                class="form-control mb-4"
+                id="email"
+                required
+              />
+              <label for="password" class="col-form-label">Password: </label>
+              <input
+                name="password"
+                type="password"
+                class="form-control mb-4"
+                id="password"
+                required
+              />
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary w-100 mb-4">
+              Login
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-secondary w-100 mb-4"
+              data-bs-target="#registerModal"
+              data-bs-toggle="modal"
+            >
+              Register
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div
+      class="modal fade"
+      id="registerModal"
+      aria-hidden="true"
+      aria-labelledby="exampleModalToggleLabel2"
+      tabindex="-1"
+    >
+      <form class="modal-dialog modal-dialog-centered" id="registerForm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">
+              Register User
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div>
+              <label for="name" class="col-form-label>">Username: </label>
+              <input
+                name="name"
+                type="name"
+                class="form-control mb-2"
+                id="nameRegister"
+                required
+              />
+              <label for="email" class="col-form-label>">Email address: </label>
+              <input
+                name="email"
+                type="email"
+                class="form-control mb-2"
+                id="emailRegister"
+                required
+              />
+              <label for="password" class="col-form-label">Password: </label>
+              <input
+                name="password"
+                type="password"
+                class="form-control mb-2"
+                id="passwordRegister"
+                required
+              />
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary w-100 mb-4">
+              Register
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-secondary w-100 mb-4"
+              data-bs-target="#loginModal"
+              data-bs-toggle="modal"
+            >
+              Login
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div
+      class="modal fade"
+      id="createListingModal"
+      aria-hidden="true"
+      aria-labelledby="exampleModalToggleLabel2"
+      tabindex="-1"
+    >
+      <form class="modal-dialog modal-dialog-centered" id="createListingForm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">
+              Create Listing
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div>
+              <label for="title" class="col-form-label>">Title: </label>
+              <input
+                name="title"
+                type="text"
+                class="form-control mb-2"
+                id="titleCreate"
+                required
+              />
+              <div class="valid-feedback">Looks good!</div>
+              <label for="description" class="col-form-label>"
+                >Description:
+              </label>
+              <input
+                name="description"
+                type="text"
+                class="form-control mb-2"
+                id="descriptionCreate"
+              />
+              <label for="tags" class="col-form-label">Tags: </label>
+              <input
+                name="tags"
+                type="text"
+                class="form-control mb-2"
+                id="tagsCreate"
+              />
+              <label for="media" class="col-form-label">Media: </label>
+              <input
+                name="media"
+                type="text"
+                class="form-control mb-2"
+                id="mediaCreate"
+              />
+              <label for="endsAt" class="col-form-label">End date: </label>
+              <input
+                name="endsAt"
+                type="date"
+                class="form-control mb-2"
+                id="endDateCreate"
+                required
+              />
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary w-100 mb-4">
+              Create Listing
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <template id="listing-template">
+      <div class="col-sm-6 col-md-4">
+        <div class="card shadow border border-0 mb-5">
+          <a class="title-text m-3 link-primary h2 stretched-link"></a>
+          <p class="created-text m-3"></p>
+          <p class="description-text m-3"></p>
+          <img class="listing-img" />
+          <span
+            ><img
+              class="image rounded-circle avatar-img avatar-img-small col-1 mt-2 ms-3" /><a
+              class="username link-primary mt-2 ms-2 stretched-link"
+              style="position: relative"
+            ></a
+          ></span>
+          <p class="end-date m-3"></p>
+        </div>
+      </div>
+    </template>
   </body>
 </html>
