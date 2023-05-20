@@ -73,5 +73,3 @@ export async function getSearchResults(searchQuery) {
     throw new Error(`${error.message}`);
   }
 }
-
-getSearchResults();
