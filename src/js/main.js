@@ -39,8 +39,11 @@ if (localStorage["accessToken"]) {
 function logoutListener() {
   logoutBtn.addEventListener("click", (event) => {
     event.preventDefault();
-    remove("accessToken");
-    window.location.reload();
+    if (localStorage["accessToken"]) {
+      alert("You have successfully logged out");
+      remove("accessToken");
+    }
+    window.location.replace("/");
   });
 }
 

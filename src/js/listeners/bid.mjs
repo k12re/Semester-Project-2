@@ -29,8 +29,13 @@ export async function bidOnListingListener() {
         body: JSON.stringify(object),
       };
       const response = await authFetch(bidListingUrl, postData);
-      location.reload();
-      return await response.json();
+      const json = await response.json();
+
+      if (!response.ok) {
+        alert(json.errors[0].message);
+      } else {
+        location.reload();
+      }
     });
   }
 }

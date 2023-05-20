@@ -8,7 +8,6 @@ const method = "POST";
 export async function loginUser(user) {
   try {
     const loginUrl = apiUrl + auctionEndpoint + authEndpoint + action;
-    console.log(loginUrl);
 
     const postData = {
       method,
@@ -18,11 +17,8 @@ export async function loginUser(user) {
       body: JSON.stringify(user),
     };
 
-    console.log(postData);
-
     const response = await fetch(loginUrl, postData);
     const json = await response.json();
-    console.log(json);
 
     if (response.ok) {
       const accessToken = json.accessToken;
@@ -31,11 +27,11 @@ export async function loginUser(user) {
       save("profile", json);
 
       window.location.href = "/";
+    } else if (!response.ok) {
+      alert(json.errors[0].message);
     }
   } catch (error) {
     console.log(error);
     throw new Error(`${error.message}`);
   }
 }
-
-// loginUser();

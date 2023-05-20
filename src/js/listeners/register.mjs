@@ -9,7 +9,6 @@ export function registerFormListener() {
       const registerForm = event.target;
       const formData = new FormData(registerForm);
       const profile = Object.fromEntries(formData.entries());
-      console.log(profile);
 
       registerUser(profile);
     });

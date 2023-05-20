@@ -16,7 +16,6 @@ export async function bidOnListing(listingId) {
 
     const response = await authFetch(bidListingUrl, postData);
     return await response.json();
-    console.log(json);
   } catch (error) {
     console.log(error);
     throw new Error(`${error.message}`);
