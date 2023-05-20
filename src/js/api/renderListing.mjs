@@ -1,7 +1,6 @@
 import { authFetch } from "./authFetch.mjs";
 import { getListing } from "./getListings.mjs";
 import { load } from "../storage/storage.mjs";
-// import { listingTemplate } from "./renderListings.mjs";
 
 const listingContainer = document.querySelector(".listing-container");
 const bidListContainer = document.querySelector(".bid-list-container");
@@ -29,6 +28,14 @@ export function listingTemplate(listingData) {
     const listingImg = clone.querySelector(".listing-img");
     listingImg.src = media;
     listingImg.alt = title;
+
+    const ThumbnailImgContainer = clone.querySelector(
+      ".thumbnail-img-container"
+    );
+    for (let i = 1; i < media.length; i++) {
+      ThumbnailImgContainer.innerHTML += `<img class="image thumb-img col-2 m-2 object-fit-cover" src="${media[i]}" alt="${media[i]}" />`;
+      console.log(media);
+    }
   }
 
   if (seller.avatar) {
@@ -56,9 +63,6 @@ export function bidTemplate(bidData) {
 
   const template = document.querySelector("#listing-bid-template");
   const clone = template.content.cloneNode(true);
-
-  // const mediaItem = clone.querySelector(".list-img");
-  // mediaItem.src = media;
 
   const bidder = clone.querySelector(".bidder-name");
   bidder.innerText = `Bidder: ${bidderName}`;
