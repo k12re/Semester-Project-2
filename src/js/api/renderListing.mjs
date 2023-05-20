@@ -34,7 +34,6 @@ export function listingTemplate(listingData) {
     );
     for (let i = 1; i < media.length; i++) {
       ThumbnailImgContainer.innerHTML += `<img class="image thumb-img col-2 m-2 object-fit-cover" src="${media[i]}" alt="${media[i]}" />`;
-      console.log(media);
     }
   }
 
