@@ -1,7 +1,11 @@
 import { getProfile } from "./getProfiles.mjs";
+import { load } from "../storage/storage.mjs";
 
 const profileContainer = document.querySelector(".profile-container");
 const listContainer = document.querySelector(".list-container");
+const editProfileFormContainer = document.querySelector(
+  "#edit-profile-form-container"
+);
 const path = location.pathname;
 
 export function profileTemplate(profileData) {
@@ -61,7 +65,12 @@ export async function profileFetch() {
   const profile = await getProfile(name);
   const listItems = profile.listings;
 
-  console.log(profile);
+  const profileName = load("profile");
+  const sellerName = profile;
+
+  if (profileName.name === sellerName.name) {
+    editProfileFormContainer.style.display = "block";
+  }
 
   renderProfile(profile, profileContainer);
   renderList(listItems, listContainer);

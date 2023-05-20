@@ -8,48 +8,39 @@
     <title>Auction House | Listing</title>
   </head>
   <body class="">
-    <nav class="nav text-bg-light fixed-bottom d-flex justify-content-around">
-      <a class="nav-link" id="profileBtn" href="/profiles/"
-        ><i class="bi bi-person m-2 h1"></i
+    <nav class="nav text-bg-light d-flex">
+      <a class="nav-link" id="profileBtn" href=""
+        ><i class="bi bi-person m-2 h3"></i
       ></a>
       <a class="nav-link active" id="homeBtn" aria-current="page" href="/"
-        ><i class="bi bi-house m-2 h1"></i
+        ><i class="bi bi-house m-2 h3"></i
       ></a>
-      <a class="nav-link" id="logoutBtn" href="#"
-        ><i class="bi bi-box-arrow-right m-2 h1"></i
+      <a class="nav-link" id="logoutBtn" href="/"
+        ><i class="bi bi-box-arrow-right m-2 h3"></i
       ></a>
     </nav>
     <div class="navbar bg-light">
       <div class="container-fluid">
         <a class="navbar-brand">Auction House</a>
-        <form class="d-flex" role="search">
-          <input
-            class="form-control me-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-          />
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
       </div>
     </div>
     <main>
       <div class="container py-4 px-3 mx-auto">
-        <span class="d-flex justify-space-between mb-4 m-3">
+        <span class="d-flex justify-space-between mb-4 m-2">
           <h1 class="col-5">Listing</h1>
         </span>
         <div class="container">
           <article class="row listing-container"></article>
-        </div>
-        <h2 class="m-3 mb-4">Place a bid: </h2>
-        <div class="container">
+        </div> 
+        <div class="container" id="bidding-form-container">
           <div class="row">
             <div class="col">
-              <form class="card shadow border border-0 m-2 mb-5">
+              <h2 class="m-3 mb-4">Place a bid: </h2>
+              <form class="card shadow border border-0 mb-5" id="bidding-form">
                 <div class="row mb-3">
                   <div class="col-11">
-                    <label for="bidInput" class="form-label"></label>
-                    <input type="number" class="form-control m-3" id="bidInput" aria-describedby="bidHelp" placeholder="Type amount...">
+                    <label for="amount" class="form-label"></label>
+                    <input name="amount" type="number" class="form-control m-3" id="amount" aria-describedby="bidHelp" placeholder="Type amount..." required>
                     <div id="bidHelp" class="form-text ms-3">Must be higher than current bid</div>
                     <button type="submit" class="btn btn-primary ms-3 me-3 mb-3 col-12">Bid on item</button>
                   </div>
@@ -76,12 +67,14 @@
     <template id="listing-template">
       <div class="container">
         <div class="row">
-          <div class="col-sm-6 col-md-4">
-            <div class="card shadow border border-0 m-2 mb-5">
+          <div class="col-12">
+            <div class="card shadow border border-0 mb-5">
               <h2 class="title-text m-3"></h2>
               <p class="created-text m-3"></p>
               <p class="description-text m-3"></p>
               <img class="listing-img" />
+              <span class="thumbnail-img-container">
+              </span>
               <span
                 ><img
                   class="image rounded-circle avatar-img avatar-img-small col-1 mt-2 ms-3" /><a
@@ -95,11 +88,8 @@
       </div>
     </template>
     <template id="listing-bid-template">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-6 col-md-4">
+          <div class="col-md-6">
             <div class="card list-card shadow border border-0 mt-2 mb-5 d-flex">
-               <!-- <img class="list-img col-3 h-100 rounded-start float-start"> -->
                <div class="col-12">
                <h3 class="bidder-name text-start ms-3 mt-3"></h3>
                <span>
@@ -109,8 +99,6 @@
               </div>
             </div>
           </div>
-        </div>
-      </div>
     </template>
   </body>
 </html>

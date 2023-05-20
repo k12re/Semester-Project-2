@@ -8,22 +8,24 @@
     <title>Auction House | Listings</title>
   </head>
   <body class="">
-    <nav class="nav text-bg-light fixed-bottom d-flex justify-content-around">
-      <a class="nav-link" id="profileBtn" href="/profiles/"
-        ><i class="bi bi-person m-2 h1"></i
+    <nav class="nav text-bg-light d-flex">
+      <a class="nav-link" id="profileBtn" href=""
+        ><i class="bi bi-person m-2 h3"></i
       ></a>
       <a class="nav-link active" id="homeBtn" aria-current="page" href="/"
-        ><i class="bi bi-house m-2 h1"></i
+        ><i class="bi bi-house m-2 h3"></i
       ></a>
       <a class="nav-link" id="logoutBtn" href="#"
-        ><i class="bi bi-box-arrow-right m-2 h1"></i
+        ><i class="bi bi-box-arrow-right m-2 h3"></i
       ></a>
     </nav>
     <div class="navbar bg-light">
       <div class="container-fluid">
         <a class="navbar-brand">Auction House</a>
-        <form class="d-flex" role="search">
+        <form class="d-flex" role="search" id="search-form">
           <input
+            name="search"
+            id="search"
             class="form-control me-2"
             type="search"
             placeholder="Search"
@@ -35,7 +37,7 @@
     </div>
     <main>
       <div class="container py-4 px-3 mx-auto">
-        <span class="d-flex justify-content-around mb-4 m-3">
+        <span class="d-flex justify-content-between mb-4 m-3">
           <h1 class="col-5">Listings</h1>
           <a
             class="nav-link"
@@ -45,27 +47,11 @@
             data-bs-target="#createListingModal"
             ><i class="bi bi-plus-circle col-2 h1"></i
           ></a>
-          <div class="btn-group col-5">
-            <button
-              type="button"
-              class="btn btn-light dropdown-toggle"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              Sort
-            </button>
-            <ul class="dropdown-menu dropdown-menu-end">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-              <li><hr class="dropdown-divider" /></li>
-              <li><a class="dropdown-item" href="#">Separated link</a></li>
-            </ul>
-          </div>
         </span>
         <div class="container">
           <article class="row listings-container"></article>
         </div>
+        <div></div>
       </div>
       <button
         type="button"
@@ -83,7 +69,7 @@
       aria-labelledby="exampleModalToggleLabel"
       tabindex="-1"
     >
-      <form class="modal-dialog modal-dialog-centered m-5" id="loginForm">
+      <form class="modal-dialog modal-dialog-centered" id="loginForm">
         <div class="modal-content">
           <div class="modal-header mb-4">
             <h1 class="modal-title fs-5" id="exampleModalToggleLabel">
@@ -104,6 +90,7 @@
                 type="email"
                 class="form-control mb-4"
                 id="email"
+                required
               />
               <label for="password" class="col-form-label">Password: </label>
               <input
@@ -111,6 +98,7 @@
                 type="password"
                 class="form-control mb-4"
                 id="password"
+                required
               />
             </div>
           </div>
@@ -137,7 +125,7 @@
       aria-labelledby="exampleModalToggleLabel2"
       tabindex="-1"
     >
-      <form class="modal-dialog modal-dialog-centered m-5" id="registerForm">
+      <form class="modal-dialog modal-dialog-centered" id="registerForm">
         <div class="modal-content">
           <div class="modal-header">
             <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">
@@ -158,6 +146,7 @@
                 type="name"
                 class="form-control mb-2"
                 id="nameRegister"
+                required
               />
               <label for="email" class="col-form-label>">Email address: </label>
               <input
@@ -165,6 +154,7 @@
                 type="email"
                 class="form-control mb-2"
                 id="emailRegister"
+                required
               />
               <label for="password" class="col-form-label">Password: </label>
               <input
@@ -172,6 +162,7 @@
                 type="password"
                 class="form-control mb-2"
                 id="passwordRegister"
+                required
               />
             </div>
           </div>
@@ -198,10 +189,7 @@
       aria-labelledby="exampleModalToggleLabel2"
       tabindex="-1"
     >
-      <form
-        class="modal-dialog modal-dialog-centered m-5"
-        id="createListingForm"
-      >
+      <form class="modal-dialog modal-dialog-centered" id="createListingForm">
         <div class="modal-content">
           <div class="modal-header">
             <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">
@@ -222,7 +210,9 @@
                 type="text"
                 class="form-control mb-2"
                 id="titleCreate"
+                required
               />
+              <div class="valid-feedback">Looks good!</div>
               <label for="description" class="col-form-label>"
                 >Description:
               </label>
@@ -252,6 +242,7 @@
                 type="date"
                 class="form-control mb-2"
                 id="endDateCreate"
+                required
               />
             </div>
           </div>
@@ -264,23 +255,20 @@
       </form>
     </div>
     <template id="listing-template">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-6 col-md-4">
-            <div class="card shadow border border-0 m-2 mb-5">
-              <a class="title-text m-3"></a>
-              <p class="created-text m-3"></p>
-              <p class="description-text m-3"></p>
-              <img class="listing-img" />
-              <span
-                ><img
-                  class="image rounded-circle avatar-img avatar-img-small col-1 mt-2 ms-3" /><a
-                  class="username btn link-primary text-muted mt-2 ms-2"
-                ></a
-              ></span>
-              <p class="end-date m-3"></p>
-            </div>
-          </div>
+      <div class="col-sm-6 col-md-4">
+        <div class="card shadow border border-0 mb-5">
+          <a class="title-text m-3 link-primary h2 stretched-link"></a>
+          <p class="created-text m-3"></p>
+          <p class="description-text m-3"></p>
+          <img class="listing-img" />
+          <span
+            ><img
+              class="image rounded-circle avatar-img avatar-img-small col-1 mt-2 ms-3" /><a
+              class="username link-primary mt-2 ms-2 stretched-link"
+              style="position: relative"
+            ></a
+          ></span>
+          <p class="end-date m-3"></p>
         </div>
       </div>
     </template>

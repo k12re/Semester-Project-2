@@ -8,29 +8,20 @@
     <title>Auction House | Profiles</title>
   </head>
   <body class="">
-    <nav class="nav text-bg-light fixed-bottom d-flex justify-content-around">
-      <a class="nav-link" id="profileBtn" href="/profiles/"
-        ><i class="bi bi-person m-2 h1"></i
+    <nav class="nav text-bg-light d-flex">
+      <a class="nav-link" id="profileBtn" href=""
+        ><i class="bi bi-person m-2 h3"></i
       ></a>
       <a class="nav-link active" id="homeBtn" aria-current="page" href="/"
-        ><i class="bi bi-house m-2 h1"></i
+        ><i class="bi bi-house m-2 h3"></i
       ></a>
       <a class="nav-link" id="logoutBtn" href="#"
-        ><i class="bi bi-box-arrow-right m-2 h1"></i
+        ><i class="bi bi-box-arrow-right m-2 h3"></i
       ></a>
     </nav>
     <div class="navbar bg-light">
       <div class="container-fluid">
         <a class="navbar-brand">Auction House</a>
-        <form class="d-flex" role="search">
-          <input
-            class="form-control me-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-          />
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
       </div>
     </div>
     <main>
@@ -54,15 +45,12 @@
       </button>
     </main>
     <template id="profiles-template">
-      <div class="container">
-        <div class="row">
           <div class="col-sm-6 col-md-4">
             <div class="card shadow border border-0 m-4 mb-5">
               <img class="avatar-image-big avatar-img rounded-circle col-3 m-3" />
               <h2 class="seller-text col-8 m-3"></h2>
               <p class="email-text col-8 m-3"></p>
               <p class="wins-text m-3"></p>
-              <!-- <img class="listing-img" /> -->
               <span
                 ><i class="bi bi-piggy-bank-fill m-2 h2 m-3"></i><p
                   class="credits m-3"
@@ -70,8 +58,6 @@
               ></span>
             </div>
           </div>
-        </div>
-      </div>
     </template>
   </body>
 </html>
