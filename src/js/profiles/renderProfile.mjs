@@ -28,7 +28,7 @@ export function profileTemplate(profileData) {
     avatarImg.src = avatar;
   } else {
     const avatarImg = clone.querySelector(".avatar-img");
-    avatarImg.src = "/dist/person-circle.svg";
+    avatarImg.src = "/assets/person-circle.svg";
   }
 
   const userName = clone.querySelector(".seller-text");
