@@ -22,5 +22,3 @@ export async function authFetch(url, options) {
     throw new Error(`${error.message}`);
   }
 }
-
-authFetch();
