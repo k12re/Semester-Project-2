@@ -14,16 +14,33 @@ export async function createListing(listing) {
       }
     }
 
+    // const postData = {
+    //   method,
+    //   body: JSON.stringify(
+    //     ({
+    //       title: listing.title,
+    //       description: listing.description,
+    //       media: listing.media.split(", "),
+    //       tags: listing.tags.split(", "),
+    //       endsAt: listing.endsAt,
+    //     })
+    //   ),
+    // };
+
     const postData = {
       method,
       body: JSON.stringify(
-        (listing = {
-          title: listing.title,
-          description: listing.description,
-          media: listing.media.split(", "),
-          tags: listing.tags.split(", "),
-          endsAt: listing.endsAt,
-        })
+        Object.fromEntries(
+          Object.entries(listing)
+            .filter(([_, value]) => value !== "")
+            .map(([key, value]) => {
+              if (key === "tags" || key === "media") {
+                return [key, value.split(", ").map((item) => item.trim())];
+              } else {
+                return [key, value];
+              }
+            })
+        )
       ),
     };
 
