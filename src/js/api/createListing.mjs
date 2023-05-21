@@ -8,11 +8,11 @@ export async function createListing(listing) {
   try {
     const createListingUrl = apiUrl + auctionEndpoint + listingsEndpoint + `/`;
 
-    for (const key in listing) {
-      if (listing[key] === "") {
-        delete listing[key];
-      }
-    }
+    // for (const key in listing) {
+    //   if (listing[key] === "") {
+    //     delete listing[key];
+    //   }
+    // }
 
     // const postData = {
     //   method,
