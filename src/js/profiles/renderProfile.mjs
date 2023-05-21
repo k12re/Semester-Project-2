@@ -8,6 +8,15 @@ const editProfileFormContainer = document.querySelector(
 );
 const path = location.pathname;
 
+const alertMain = document.querySelector(".container");
+
+if (path === "/profile/" && !localStorage["accessToken"]) {
+  alertMain.innerHTML = `<div class="card shadow border border-0 mx-auto alert alert-warning" role="alert"">
+  <h1 class="title-text m-3 h2 mx-auto"> Please sign in</h1>
+  <p class="description-text m-3 mx-auto">You need to be signed in to view this content</p>
+</div>`;
+}
+
 export function profileTemplate(profileData) {
   const { name, email, avatar, credits, wins, _count } = profileData;
 

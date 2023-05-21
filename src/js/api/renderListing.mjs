@@ -7,6 +7,15 @@ const bidListContainer = document.querySelector(".bid-list-container");
 const bidFormContainer = document.querySelector("#bidding-form-container");
 const path = location.pathname;
 
+const alertMain = document.querySelector(".container");
+
+if (path === "/listing/" && !localStorage["accessToken"]) {
+  alertMain.innerHTML = `<div class="card shadow border border-0 mx-auto alert alert-warning" role="alert"">
+  <h1 class="title-text m-3 h2 mx-auto"> Please sign in</h1>
+  <p class="description-text m-3 mx-auto">You need to be signed in to view this content</p>
+</div>`;
+}
+
 export function listingTemplate(listingData) {
   const { title, description, tags, media, seller, created, endsAt, id } =
     listingData;
