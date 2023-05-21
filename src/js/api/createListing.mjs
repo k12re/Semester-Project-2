@@ -8,25 +8,6 @@ export async function createListing(listing) {
   try {
     const createListingUrl = apiUrl + auctionEndpoint + listingsEndpoint + `/`;
 
-    // for (const key in listing) {
-    //   if (listing[key] === "") {
-    //     delete listing[key];
-    //   }
-    // }
-
-    // const postData = {
-    //   method,
-    //   body: JSON.stringify(
-    //     ({
-    //       title: listing.title,
-    //       description: listing.description,
-    //       media: listing.media.split(", "),
-    //       tags: listing.tags.split(", "),
-    //       endsAt: listing.endsAt,
-    //     })
-    //   ),
-    // };
-
     const postData = {
       method,
       body: JSON.stringify(
