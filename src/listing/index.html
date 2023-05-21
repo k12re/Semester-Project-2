@@ -67,6 +67,126 @@
         Login/Register
       </button>
     </main>
+    <div
+    class="modal fade"
+    id="loginModal"
+    aria-hidden="true"
+    aria-labelledby="exampleModalToggleLabel"
+    tabindex="-1"
+  >
+    <form class="modal-dialog modal-dialog-centered" id="loginForm">
+      <div class="modal-content">
+        <div class="modal-header mb-4">
+          <h1 class="modal-title fs-5" id="exampleModalToggleLabel">
+            Login User
+          </h1>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <div>
+            <label for="email" class="col-form-label>">Email address: </label>
+            <input
+              name="email"
+              type="email"
+              class="form-control mb-4"
+              id="email"
+              required
+            />
+            <label for="password" class="col-form-label">Password: </label>
+            <input
+              name="password"
+              type="password"
+              class="form-control mb-4"
+              id="password"
+              required
+            />
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary w-100 mb-4">
+            Login
+          </button>
+          <button
+            type="button"
+            class="btn btn-outline-secondary w-100 mb-4"
+            data-bs-target="#registerModal"
+            data-bs-toggle="modal"
+          >
+            Register
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div
+    class="modal fade"
+    id="registerModal"
+    aria-hidden="true"
+    aria-labelledby="exampleModalToggleLabel2"
+    tabindex="-1"
+  >
+    <form class="modal-dialog modal-dialog-centered" id="registerForm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">
+            Register User
+          </h1>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <div>
+            <label for="name" class="col-form-label>">Username: </label>
+            <input
+              name="name"
+              type="name"
+              class="form-control mb-2"
+              id="nameRegister"
+              required
+            />
+            <label for="email" class="col-form-label>">Email address: </label>
+            <input
+              name="email"
+              type="email"
+              class="form-control mb-2"
+              id="emailRegister"
+              required
+            />
+            <label for="password" class="col-form-label">Password: </label>
+            <input
+              name="password"
+              type="password"
+              class="form-control mb-2"
+              id="passwordRegister"
+              required
+            />
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary w-100 mb-4">
+            Register
+          </button>
+          <button
+            type="button"
+            class="btn btn-outline-secondary w-100 mb-4"
+            data-bs-target="#loginModal"
+            data-bs-toggle="modal"
+          >
+            Login
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
     <template id="listing-template">
       <div class="container">
         <div class="row">
