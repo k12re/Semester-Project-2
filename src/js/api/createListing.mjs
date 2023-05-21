@@ -16,7 +16,15 @@ export async function createListing(listing) {
 
     const postData = {
       method,
-      body: JSON.stringify(listing),
+      body: JSON.stringify(
+        (listing = {
+          title: listing.title,
+          description: listing.description,
+          media: listing.media.split(", "),
+          tags: listing.tags.split(", "),
+          endsAt: listing.endsAt,
+        })
+      ),
     };
 
     const response = await authFetch(createListingUrl, postData);
