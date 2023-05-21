@@ -51,7 +51,7 @@ export function listingTemplate(listingData) {
     avatarImg.src = seller.avatar;
   } else {
     const avatarImg = clone.querySelector(".avatar-img");
-    avatarImg.src = "/person-circle.svg";
+    avatarImg.src = "/assets/person-circle.svg";
   }
 
   const userName = clone.querySelector(".username");
