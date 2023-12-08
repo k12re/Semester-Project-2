@@ -35,7 +35,7 @@
 1. Clone the repo:
 
 ```
-git clone
+git clone https://github.com/k12re/Semester-Project-2.git
 ```
 
 2. Install the dependencies:
@@ -45,6 +45,14 @@ npm install
 ```
 
 ### Running
+
+To run the app, run the following commands:
+
+```
+npm run build
+```
+
+### Build
 
 To run the app, run the following commands:
 
