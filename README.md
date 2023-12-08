@@ -49,7 +49,7 @@ npm install
 To run the app, run the following commands:
 
 ```
-npm run build
+npm run start
 ```
 
 ### Build
