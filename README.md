@@ -1,6 +1,5 @@
 # Auction House - Semester Project 2
-![Skjermbilde 2023-05](https://github.com/k12re/Semester-Project-2/assets/83732570/157f8c64-4278-4d67-820e-9393707ec3a7)
-
+![auction](https://github.com/k12re/Semester-Project-2/assets/83732570/f2db6b0b-ccba-4029-aea2-60e45b64c0d1)
 
 ## Description
 
